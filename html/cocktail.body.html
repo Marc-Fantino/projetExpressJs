@@ -1,0 +1,67 @@
+<div class="flex flex-col min-h-screen">
+    <h5 class="text-center text-base md:text-lg text-indigo-700 mb-1 mt-20">Projet 9 sur NodeJs avec tailwind Css</h5>
+    <h1 class=" text-center text-4xl md:text-6xl text-gray-700 font-semibold mt-20">Carte à <span
+            class="font-bold">Cocktails</span></h1>
+
+    <div class="max-w-2xl mx-auto px-4 py-8 lg:max-w-7xl grid grid-cols-1 gap-y-10 gap-x-8 sm:grid-cols-2 lg:grid-cols-3 xl-grid-cols-4"
+        id="affichage">
+
+    </div>
+</div>
+
+
+
+<script>
+
+    document.addEventListener("DOMContentLoaded", () => {
+
+        //La div html qui va contenir les produits
+
+        const affichage = document.getElementById('affichage');
+        /***********************Afficher Les produits***************/
+        function affichercocktail() {
+
+            fetch('https://gist.githubusercontent.com/Marc-Fantino/f93cfc1444f22d5eb89246af943f0aad/raw/3652bac513b47da39de36c8237f239d4682e9bc9/cockail', {
+                //headers:{
+                //"Access-Control-Allow-Origin": "*",
+                //'Content-Type': 'application/json',
+                //},
+            })
+                .then((response) => {
+                    console.log(response);
+                    return response.json();
+
+                })
+
+                .then((produits) => {
+
+                    let carteCocktail = produits.map((produit) =>
+
+                        `<div class="bg-white shadow-lg rounded-lg">
+        <img class="rounded-t-lg" src="${produit.image_thumb_url}" alt="">
+        <div class="p-4">
+            <div class="flex mb-5">
+                <h3 class="text-2xl text-gray-700">
+                ${produit.name}
+                </h3>
+                <p class="mt-1 ml-auto text-lg font-medium text-gray-900">${produit.prix} €</p>
+            </div>
+            <a href="" class="inline-flex items-center justify-between px-5 py-1 font-medium rounded-md bg-red-600">
+            <span class="text-gray-100 text-lg">
+            Recette du cocktail
+            </span>
+            <img src="./img/food-tray.svg" alt="icone" class="ml-4 h-6 w-6">
+            </a>
+        </div>
+        </div>`)
+                    affichage.innerHTML = carteCocktail.join('');
+                    console.log(produits);
+                })
+                .catch((erreur) => {
+                    console.log("Erreur " + erreur)
+                });
+        }
+        affichercocktail();
+    })
+
+</script>

@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch*/
+
+#affichage{
+background: url(../src/image/fleur_blanche.jpg);
+}

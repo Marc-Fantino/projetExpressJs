@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../dist/output.css">
+    <title>Document</title>
+        <!--En-Tête-spécifique-aux-pages-->
+        {{EN-TETE}}
+</head>
+<body>
+    <!--En-Tête-->
+    <header>
+        <div class="relative z-10 w-full bg-gray-900 bg-opacity-80 shadow-sm bg-clip-padding blur-backdrop-filter">
+            <nav
+                class="relative flex items-center justify-between w-full max-w-screen-xl px-5 mx-auto text-white lg:px-2 lg:shadow-none">
+                <div class="absolute inset-0 z-0 block w-full shadow-md opacity-50 lg:hidden"></div>
+                <button class="z-10 w-10 sm:w-12 md:w-16 lg:hidden opacity-90 focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" fiil="none" viewBox="0 0 24 24" stroke="currentColor"
+                        class="w-8 h-8">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+
+                <div class="z-10 flex items-center justify-center lg:space-x-2 focus:outline-none">
+                    <img src="../src/image/logo.png" alt="logo" class="w-8 h-8">
+                    <h2
+                        class="hidden text-xl font-semibold tracking-tight text-white transition duration-200 hover:text-gray-300 lg:block">
+                        Blueline.Dev
+                    </h2>
+                    <div
+                    class="hidden text-gray-200 transition duration-200 hover:text-gray-400 lg:block">
+                    <a href="/">accueil</a>
+                </div>
+                </div>
+
+                <div class="flex items-center font-medium tracking-tight lg:space-x-5 text-md">
+                    <div
+                    class="hidden text-gray-200 transition duration-200 hover:text-gray-400 lg:block">
+                    <a href="chat">Chat</a>
+                </div>
+                    <div
+                        class="hidden text-gray-200 transition duration-200 hover:text-gray-400 lg:block">
+                        <a href="cocktail">Cocktails</a> 
+                    </div>
+                    <div
+                        class="z-10 text-white transition duration-200 cursor-pointer text-opacity-90 hover:text-gray-400 lg:hidden">
+                        Connection
+                    </div>
+                    <div
+                        class="relative z-10 items-center hidden px-3 py-2 space-x-2 text-white transition duration-200 transform rounded-sm shadow-sm lg:flex hover:shadow-md bg-gradient-to-t">
+                        <div
+                            class="absolute inset-0 z-0 w-full h-full bg-indigo-700 rounded-sm ring-indigo-600 ring-opacity-60 animate-pulse">
+                        </div>
+                        <span class="z-10">Connexion</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" fiil="none" viewBox="0 0 24 24" stroke="currentColor"
+                            class="z-10 w-4 h-4">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                    </div>
+                </div>
+
+            </nav>
+        </div>
+        </header>
+    <!--Corps-->
+    <main>
+     <!--Contenue-spécifique-des-pages-->
+     {{CORPS}}
+    </main>
+    <!--Pied-de-page-->
+
+    <footer class="bg-gray-900 py-12 bg-opacity-80">
+        <div class="container mx-auto px-2 text-white">
+            <div class="flex justify-between">
+                <div>
+                    <h2 class="text-3xl font-bold mb-4">Explorer</h2>
+                    <ul class="flex space-x-4 justify-between text-4xl">
+                        <li><a href="#">
+                            <i class="fa-brands fa-facebook"></i>
+                        </a></li>
+                        <li><a href="#">
+                            <i class="fa-brands fa-youtube"></i>
+                        </a></li>
+
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="text-3xl font-bold mb-4">Pour savoir plus</h2>
+                    <ul>
+                        <li><a href="#">Accueil</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">A propos</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="text-3xl font-bold mb-4 pacifico">Blueline.Dev</h2>
+                    &copy;Marc Blueline 2022 Droits reservés
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

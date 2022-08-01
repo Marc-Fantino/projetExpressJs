@@ -1,0 +1,44 @@
+<h2>Chat Roulette</h2> 
+
+<form action="" id="form">
+    <input type="text" name="" id="input" placeholder="Votre message"><button>Send</button>
+</form>
+<ul id="message"></ul>
+<script src="./socket.io/socket.io.js"></script>
+<script>
+    //Instance du packet websocket
+    let socket = io();
+    //formulaire
+    
+    const form = document.getElementById('form');
+    
+    const input = document.getElementById('input');
+    
+    const message = document.getElementById('message');
+    
+    // evenement a la soumission du formulaire
+    
+    form.addEventListener('submit',(evenement)=>{
+        //valeur de l'input
+        evenement.preventDefault();
+        if(input.value){
+            socket.emit('ChatMessage', input.value);
+            //apres l'envoie on vide le chat
+            input.value = '';
+        }
+    });
+    
+    socket.on('ChatMessage', (msg)=>{
+        let messageLi = document.createElement('li');
+        messageLi.textContent = msg
+        message.appendChild(messageLi);
+        window.scrollTo(0, document.body.scrollHeight);
+    })
+    io.on('connection', (socket)=>{
+    socket.on('ChatMessage', (msg)=>{
+        io.emit('ChatMessage', msg)
+        console.log('message envoyé :' + msg)
+    })
+ 
+});
+</script>
